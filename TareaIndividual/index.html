@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>PRUEBA - Coyago Eunice</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="vehiculo/css/estilos.css" type="text/css"/>
+	  
+	</head>
+  
+	<body>
+		<!-- header (Rectangle) -->
+        <div id="header" class="">
+            <img id="Espe_img" class="" src="vehiculo/img/logo_ESPE.png" style="position:absolute;left:350px;top:40px;width:500px;height:89px;">
+        </div>
+    
+		<!-- navBar (Rectangle) -->
+		<div id="navBar" class="Texto">
+			<table align="center" border="0">
+				<tr>
+					<td> <a href="vehiculo/index.php">Vehiculo</a> </td>
+					<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td> 
+					<td> <a href="vehiculo/marcas.php">Marcas</a> </td> 
+					<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td> 
+					<td> <a href="vehiculo/agencias.php">Agencias</a> </td> 
+				</tr>
+			</table>
+		</div>
+
+		<!-- Matricular (Rectangle) -->
+        <div id="leftMenu" class="">
+		  <a href="#" class="Boton" onclick="mostrarVentanaEmergente()">Matricular</a>
+		</div>
+
+		<!-- Ventana emergente -->
+		<div id="ventanaEmergente" class="ventana">
+		  <div class="contenidoVentana">
+			<span onclick="cerrarVentanaEmergente()" class="cerrar">&times;</span>
+			<p>La opcion de matricular, por el momento no está lista. Lamentamos los inconvenientes. Pronto estará funcionando.</p>
+		  </div>
+		</div>
+
+		<script>
+		  // Función para mostrar la ventana emergente
+		  function mostrarVentanaEmergente() {
+			var ventana = document.getElementById("ventanaEmergente");
+			ventana.style.display = "block";
+		  }
+
+		  // Función para cerrar la ventana emergente
+		  function cerrarVentanaEmergente() {
+			var ventana = document.getElementById("ventanaEmergente");
+			ventana.style.display = "none";
+		  }
+		</script>
+
+		<!-- content (Rectangle) -->
+        <div id="content" class="Texto" data-label="content">
+			<h2>Desarrollo de aplicaciones WEB</h2>
+			  
+			<p><b>Estudiante:</b> Eunice Coyago</p>
+			<p><b>NRC:</b> 10050</p>
+			<p><b>Fecha de Entrega:</b> 15/05/2023</p>
+        </div>
+
+		<!-- rightMenu (Rectangle) -->
+        <div id="rightMenu" class="">
+			<iframe width="370" height="300" src="https://www.youtube.com/embed/ASGiWZlhXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+		<!-- footer (Rectangle) -->
+        <div id="footer" class="Texto">
+			<a href="contacto.html">Contacto</a>
+        </div>
+	</body>
+</html>
