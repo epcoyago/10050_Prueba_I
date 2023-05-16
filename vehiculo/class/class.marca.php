@@ -137,14 +137,13 @@ class marca{
 
 	public function get_form_marca($id=NULL){
 		// Código agregado -- //
-	if(($id == NULL) || ($id == 0) ) {
+		if($id == NULL){
 			$this->descripcion = NULL;
 			$this->pais = NULL;
 			$this->foto = NULL;
 			
-			$flag = 'enabled';
+			$flag = NULL;
 			$op = "new";
-			$bandera = 1;
 	}else{
 			$sql = "SELECT * FROM marca WHERE id=$id;";
 			$res = $this->con->query($sql);
@@ -152,7 +151,7 @@ class marca{
             $num = $res->num_rows;
             $bandera = ($num==0) ? 0 : 1;
             
-            if(!($bandera)){
+            if($num==0){
                 $mensaje = "tratar de actualizar la marca con id= ".$id . "<br>";
                 echo $this->_message_error($mensaje);
 				
@@ -176,10 +175,9 @@ class marca{
             }
 	}
         
-	if($bandera){		
 		$html = '<br><br>
 		
-		<form class=" " name="Form_marca" method="POST" action="marca.php" enctype="multipart/form-data" >
+		<form class=" " name="Form_marca" method="POST" action="marcas.php" enctype="multipart/form-data" >
 		
 		<input type="hidden" name="id" value="' . $id  . '">
 		<input type="hidden" name="op" value="' . $op  . '">
@@ -208,7 +206,7 @@ class marca{
 				</tr>										
 			</table>';
 		return $html;
-		}
+		
 	}
 	
 	public function get_list(){
@@ -221,7 +219,7 @@ class marca{
 				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8">Lista de Marcas</th>
 			</tr>
 			<tr>
-				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="marcas.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><b>Nuevo</b></a></th>
+				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="marcas.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><i class="fas fa-plus"></i> Nuevo</a></th>
 			</tr>
 			<tr>
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Marca</th>
@@ -252,8 +250,8 @@ class marca{
 				</tr>';
 		}
 		$html .= '<tr>
-						<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
-					</tr>
+					<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
+				</tr>
 				</table>';
 	}else{
 		$mensaje = "Tabla Marcas" . "<br>";

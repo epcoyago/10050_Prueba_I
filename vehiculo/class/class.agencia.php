@@ -196,7 +196,7 @@ class agencia{
 	if($bandera){		
 		$html = '<br><br>
 		
-		<form class=" " name="Form_agencia" method="POST" action="agencia.php" enctype="multipart/form-data" >
+		<form class=" " name="Form_agencia" method="POST" action="agencias.php" enctype="multipart/form-data" >
 		
 		<input type="hidden" name="id" value="' . $id  . '">
 		<input type="hidden" name="op" value="' . $op  . '">
@@ -250,7 +250,7 @@ class agencia{
 				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8">Lista de Agencias</th>
 			</tr>
 			<tr>
-				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="agencias.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><b>Nuevo</b></a></th>
+				<th class="text-center" colspan="8" style="color:#f7f5f5; background-color:#6879C6"><a href="agencias.php?d=' . $d_new_final . '"class="text-center btn" style="color:#f7f5f5; background-color:#0EB36D" ><i class="fas fa-plus"></i> Nuevo</a></th>
 			</tr>
 			<tr>
 				<th class="text-center" style="color:#f7f5f5; background-color:#2EB4F8">Agencia</th>
