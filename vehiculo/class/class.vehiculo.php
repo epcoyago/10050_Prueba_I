@@ -311,7 +311,7 @@ class vehiculo{
 					<td>' . $row['color'] . '</td>
 					<td>' . $row['anio'] . '</td>
 					<td>' . $row['avaluo'] . '</td>
-					<td class="text-center"><a href="index.php?d=' . $d_act_final . '" class="text-center btn" style="color: #000000; background-color: #FA0B00"><i class="fas fa-trash-alt"></i> Borrar </a></td>
+					<td class="text-center"><a href="index.php?d=' . $d_del_final . '" class="text-center btn" style="color: #000000; background-color: #FA0B00"><i class="fas fa-trash-alt"></i> Borrar </a></td>
 					<td class="text-center"><a href="index.php?d=' . $d_act_final . '"class="text-center btn" style="color:#000000; background-color:#FAE617" ><i class="fas fa-sync-alt"></i> Actualizar</a></td>
 					<td class="text-center"><a href="index.php?d=' . $d_det_final . '"class="text-center btn" style="color:#000000; background-color:#33D6CB" ><i class="fas fa-info-circle"></i> Detalle</a></td>
 				</tr>';
