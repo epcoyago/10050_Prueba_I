@@ -137,13 +137,14 @@ class marca{
 
 	public function get_form_marca($id=NULL){
 		// Código agregado -- //
-		if($id == NULL){
+	if(($id == NULL) || ($id == 0) ) {
 			$this->descripcion = NULL;
 			$this->pais = NULL;
 			$this->foto = NULL;
 			
-			$flag = NULL;
+			$flag = 'enabled';
 			$op = "new";
+			$bandera = 1;
 	}else{
 			$sql = "SELECT * FROM marca WHERE id=$id;";
 			$res = $this->con->query($sql);
@@ -151,7 +152,7 @@ class marca{
             $num = $res->num_rows;
             $bandera = ($num==0) ? 0 : 1;
             
-            if($num==0){
+            if(!($bandera)){
                 $mensaje = "tratar de actualizar la marca con id= ".$id . "<br>";
                 echo $this->_message_error($mensaje);
 				
@@ -323,7 +324,7 @@ class marca{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th>Error al ' . $tipo . '. Favor contactar a .................... </th>
+				<th><br><br>Error al ' . $tipo . '. Favor contactar a .................... </th>
 			</tr>
 			<tr>
 				<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
@@ -337,7 +338,7 @@ class marca{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th>El registro se  ' . $tipo . ' correctamente</th>
+				<th><br><br>El registro se  ' . $tipo . ' correctamente</th>
 			</tr>
 			<tr>
 				<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>

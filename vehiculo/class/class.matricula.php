@@ -223,6 +223,7 @@ class vehiculo{
 		<input type="hidden" name="id" value="' . $id  . '">
 		<input type="hidden" name="op" value="' . $op  . '">
 		<br><br>
+
 		<table class="table table-hover" style="background-color:#f1fdf3;" border="1" align="center">
 				<tr>
 					<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><b>DATOS VEHÍCULO</b></th>
@@ -253,7 +254,7 @@ class vehiculo{
 				</tr>
 				<tr>
 					<td class="text-center" colspan="5" style="color:#f7f5f5; background-color:#6879C6"><b>Color:</b></td>
-							<td>' . $this->_get_combo_db("color","id","descripcion","colorCMB",$this->color) . '</td>
+					<td>' . $this->_get_combo_db("color","id","descripcion","colorCMB",$this->color) . '</td>
 				</tr>
 				<tr>
 					<td class="text-center" colspan="5" style="color:#f7f5f5; background-color:#6879C6"><b>Foto:</b></td>
@@ -267,7 +268,7 @@ class vehiculo{
 					<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><input class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3"  type="submit" name="Guardar" value="GUARDAR"></th>
 				</tr>	
 				<tr>
-					<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
+					<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
 				</tr>
 			</table>';
 		return $html;
@@ -311,9 +312,33 @@ class vehiculo{
 					<td>' . $row['color'] . '</td>
 					<td>' . $row['anio'] . '</td>
 					<td>' . $row['avaluo'] . '</td>
-					<td class="text-center"><a href="index.php?d=' . $d_del_final . '" class="text-center btn" style="color: #000000; background-color: #FA0B00"><i class="fas fa-trash-alt"></i> Borrar </a></td>
-					<td class="text-center"><a href="index.php?d=' . $d_act_final . '"class="text-center btn" style="color:#000000; background-color:#FAE617" ><i class="fas fa-sync-alt"></i> Actualizar</a></td>
-					<td class="text-center"><a href="index.php?d=' . $d_det_final . '"class="text-center btn" style="color:#000000; background-color:#33D6CB" ><i class="fas fa-info-circle"></i> Detalle</a></td>
+					
+					<td class="text-center"><a href="#" class="text-center btn" style="color: #000000; background-color: #2EB4F8" onclick="mostrarVentanaEmergente()"><i class="fas fa-file-signature"></i> Matricular </a></td>
+
+					<!-- Ventana emergente -->
+					<div id="ventanaEmergente" class="ventana" style="display: none;">
+					  <div class="contenidoVentana">
+						<span onclick="cerrarVentanaEmergente()" class="cerrar">&times;</span>
+						<p>La opción de matricular, por el momento no está lista. Lamentamos los inconvenientes. Pronto estará funcionando.</p>
+					  </div>
+					</div>
+
+					<script>
+					  // Función para mostrar la ventana emergente
+					  function mostrarVentanaEmergente() {
+						var ventana = document.getElementById("ventanaEmergente");
+						ventana.style.display = "block";
+					  }
+
+					  // Función para cerrar la ventana emergente
+					  function cerrarVentanaEmergente() {
+						var ventana = document.getElementById("ventanaEmergente");
+						ventana.style.display = "none";
+					  }
+					</script>
+
+					
+					
 				</tr>';
 		}
 		$html .= '<tr>
@@ -420,10 +445,10 @@ class vehiculo{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th><br><br>Error al ' . $tipo . '. Favor contactar a .................... </th>
+				<th>Error al ' . $tipo . '. Favor contactar a .................... </th>
 			</tr>
 			<tr>
-				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
+				<th class="text-center" style="color:#f7f5f5; background-color:#7d92a1;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
 			</tr>
 		</table>';
 		return $html;
@@ -434,10 +459,10 @@ class vehiculo{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th><br><br>El registro se  ' . $tipo . ' correctamente</th>
+				<th>El registro se  ' . $tipo . ' correctamente</th>
 			</tr>
 			<tr>
-				<th class="text-center" style="color:#f7f5f5; background-color:#330867;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
+				<th class="text-center" style="color:#f7f5f5; background-color:#7d92a1;" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
 			</tr>
 		</table>';
 		return $html;

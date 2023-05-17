@@ -372,7 +372,7 @@ class agencia{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th>Error al ' . $tipo . '. Favor contactar a .................... </th>
+				<th><br><br>Error al ' . $tipo . '. Favor contactar a .................... </th>
 			</tr>
 			<tr>
 				<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
@@ -386,7 +386,7 @@ class agencia{
 		$html = '
 		<table border="0" align="center">
 			<tr>
-				<th>El registro se  ' . $tipo . ' correctamente</th>
+				<th><br><br>El registro se  ' . $tipo . ' correctamente</th>
 			</tr>
 			<tr>
 				<th class="text-center" colspan="8"><a href="../index.html" class="text-center btn" style="color:#f7f5f5; background-color:#6d96b3" ><b>Regresar</b></a></th>
